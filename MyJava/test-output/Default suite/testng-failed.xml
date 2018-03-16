@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ArrowMiiTests.LoginTest">
+      <class name="ArrowMiiTests.BroadcastIteratorTest">
         <methods>
-          <include name="launch"/>
+          <include name="groupsToTriggerTestTest"/>
           <include name="exit"/>
-          <include name="broadcastIterator"/>
+          <include name="launch"/>
         </methods>
-      </class> <!-- ArrowMiiTests.LoginTest -->
+      </class> <!-- ArrowMiiTests.BroadcastIteratorTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

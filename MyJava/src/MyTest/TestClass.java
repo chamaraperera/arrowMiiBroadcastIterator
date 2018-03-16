@@ -1,6 +1,6 @@
 package MyTest;
 
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 

@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5088" started-at="2018-03-16T02:16:37Z" finished-at="2018-03-16T02:16:42Z">
+  <suite name="Default suite" duration-ms="17209" started-at="2018-03-16T10:13:13Z" finished-at="2018-03-16T10:13:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5088" started-at="2018-03-16T02:16:37Z" finished-at="2018-03-16T02:16:42Z">
+    <test name="Default test" duration-ms="17209" started-at="2018-03-16T10:13:13Z" finished-at="2018-03-16T10:13:30Z">
       <class name="ArrowMiiTests.BroadcastIteratorTest">
-        <test-method status="PASS" signature="launch()[pri:0, instance:ArrowMiiTests.BroadcastIteratorTest@125a8ab6]" name="launch" is-config="true" duration-ms="555" started-at="2018-03-16T02:16:37Z" finished-at="2018-03-16T02:16:38Z">
+        <test-method status="PASS" signature="launch()[pri:0, instance:ArrowMiiTests.BroadcastIteratorTest@3e27ba32]" name="launch" is-config="true" duration-ms="1389" started-at="2018-03-16T10:13:13Z" finished-at="2018-03-16T10:13:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method status="PASS" signature="broadcastIterator()[pri:0, instance:ArrowMiiTests.BroadcastIteratorTest@125a8ab6]" name="broadcastIterator" duration-ms="4396" started-at="2018-03-16T02:16:38Z" finished-at="2018-03-16T02:16:42Z">
+        <test-method status="PASS" signature="groupsToTriggerTestTest()[pri:6, instance:ArrowMiiTests.BroadcastIteratorTest@3e27ba32]" name="groupsToTriggerTestTest" duration-ms="15698" started-at="2018-03-16T10:13:14Z" finished-at="2018-03-16T10:13:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- broadcastIterator -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:ArrowMiiTests.BroadcastIteratorTest@125a8ab6]" name="exit" is-config="true" duration-ms="108" started-at="2018-03-16T02:16:42Z" finished-at="2018-03-16T02:16:42Z">
+        </test-method> <!-- groupsToTriggerTestTest -->
+        <test-method status="PASS" signature="exit()[pri:0, instance:ArrowMiiTests.BroadcastIteratorTest@3e27ba32]" name="exit" is-config="true" duration-ms="107" started-at="2018-03-16T10:13:30Z" finished-at="2018-03-16T10:13:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->

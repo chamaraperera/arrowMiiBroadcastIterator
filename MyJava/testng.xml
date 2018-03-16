@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ArrowMiiTests">
+ 
+    <test name="BroadCastIterator">
+ 
+	<parameter name="adminEmail" value="arrowme@email.com"/>
+ 
+	<parameter name="adminPassword" value="123qwe"/>
+ 
+		<classes>
+ 
+		    <class name="MyJava/src/ArrowMiiTests/BroadcastIteratorTest"> </class>
+ 
+		</classes>
+ 
+    </test>
+ 
+</suite>

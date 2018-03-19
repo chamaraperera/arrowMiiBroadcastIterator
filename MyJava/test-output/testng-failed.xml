@@ -5,9 +5,12 @@
     <classes>
       <class name="ArrowMiiTests.BroadcastIteratorTest">
         <methods>
+          <include name="groupsToTriggerTestFour"/>
           <include name="groupsToTriggerTestTest"/>
           <include name="exit"/>
           <include name="launch"/>
+          <include name="groupsToTriggerTestTwo"/>
+          <include name="groupsToTriggerTestThree"/>
         </methods>
       </class> <!-- ArrowMiiTests.BroadcastIteratorTest -->
     </classes>

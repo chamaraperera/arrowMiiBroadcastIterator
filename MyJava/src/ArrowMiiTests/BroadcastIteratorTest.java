@@ -1,5 +1,8 @@
 package ArrowMiiTests;
 
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -22,7 +25,7 @@ public class BroadcastIteratorTest {
 	
 	public WebDriverWait wait = new WebDriverWait(Setup.chromedriver, 5);
 
-	@BeforeTest
+	@BeforeTest(alwaysRun = true)
 	public void launch() {
 		Setup.navigateArrowMiiUrl();
 	}
@@ -47,7 +50,7 @@ public class BroadcastIteratorTest {
 	
 	
 	
-	
+	/*
 	@Test(priority=2)
 	public void groupsToTriggerTestOne() {
 		
@@ -66,11 +69,12 @@ public class BroadcastIteratorTest {
 		BroadcastIteratorFunctions.compareGroupsToTrigger(TestData.arrGroupsToTriggerExpected, TestData.arrDiffFromCreatedAtExpected, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
 	
 	}
+	*/
 	
 	
 	
 	@Test(priority=3)
-	public void groupsToTriggerTestTwo() {
+	public void groupsToTriggerTestTwo() throws InvalidFormatException, IOException {
 		
 		ArrowMiiLoginPage.txtEmail(Setup.chromedriver).sendKeys(Constants.adminEmail);
 		ArrowMiiLoginPage.txtPassword(Setup.chromedriver).sendKeys(Constants.adminPassword);
@@ -84,14 +88,13 @@ public class BroadcastIteratorTest {
 		ArrowMiiBroadcastingIterator.btnSearch(Setup.chromedriver).click();
 		Assert.assertEquals(ArrowMiiBroadcastingIterator.lblType(Setup.chromedriver).getText(), "Type: standard", "Passed");
 		wait.until(ExpectedConditions.visibilityOf(ArrowMiiBroadcastingIterator.tblBroadcastColumns(Setup.chromedriver)));
-		BroadcastIteratorFunctions.compareGroupsToTrigger(TestData.arrGroupsToTriggerExpected2, TestData.arrDiffFromCreatedAtExpected2, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
-	
+		BroadcastIteratorFunctions.readExcelAndCompare(0, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
 	}
 	
 	
 	
 	@Test(priority=4)
-	public void groupsToTriggerTestThree() {
+	public void groupsToTriggerTestThree() throws InvalidFormatException, IOException {
 		
 		ArrowMiiLoginPage.txtEmail(Setup.chromedriver).sendKeys(Constants.adminEmail);
 		ArrowMiiLoginPage.txtPassword(Setup.chromedriver).sendKeys(Constants.adminPassword);
@@ -105,13 +108,12 @@ public class BroadcastIteratorTest {
 		ArrowMiiBroadcastingIterator.btnSearch(Setup.chromedriver).click();
 		Assert.assertEquals(ArrowMiiBroadcastingIterator.lblType(Setup.chromedriver).getText(), "Type: exception", "Passed");
 		wait.until(ExpectedConditions.visibilityOf(ArrowMiiBroadcastingIterator.tblBroadcastColumns(Setup.chromedriver)));
-		BroadcastIteratorFunctions.compareGroupsToTrigger(TestData.arrGroupsToTriggerExpected3, TestData.arrDiffFromCreatedAtExpected3, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
-	
+		BroadcastIteratorFunctions.readExcelAndCompare(1, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
 	}
 	
 	
 	@Test(priority=5)
-	public void groupsToTriggerTestFour() {
+	public void groupsToTriggerTestFour() throws InvalidFormatException, IOException {
 		
 		ArrowMiiLoginPage.txtEmail(Setup.chromedriver).sendKeys(Constants.adminEmail);
 		ArrowMiiLoginPage.txtPassword(Setup.chromedriver).sendKeys(Constants.adminPassword);
@@ -125,15 +127,14 @@ public class BroadcastIteratorTest {
 		ArrowMiiBroadcastingIterator.btnSearch(Setup.chromedriver).click();
 		Assert.assertEquals(ArrowMiiBroadcastingIterator.lblType(Setup.chromedriver).getText(), "Type: standard", "Passed");
 		wait.until(ExpectedConditions.visibilityOf(ArrowMiiBroadcastingIterator.tblBroadcastColumns(Setup.chromedriver)));
-		BroadcastIteratorFunctions.compareGroupsToTrigger(TestData.arrGroupsToTriggerExpected4, TestData.arrDiffFromCreatedAtExpected4, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
-	
+		BroadcastIteratorFunctions.readExcelAndCompare(2, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
 	}
 	
 	
 	
 	@Test(priority=6)
 	//@Parameters({ "adminEmail", "adminPassword" })
-	public void groupsToTriggerTestTest() {
+	public void groupsToTriggerTestTest() throws InvalidFormatException, IOException {
 		
 		ArrowMiiLoginPage.txtEmail(Setup.chromedriver).sendKeys(Constants.adminEmail);
 		ArrowMiiLoginPage.txtPassword(Setup.chromedriver).sendKeys(Constants.adminPassword);
@@ -146,14 +147,16 @@ public class BroadcastIteratorTest {
 		//BroadcastIteratorFunctions.enterJobSchedule(TestData.valueCreatedAt, TestData.valueStartsAt, "VIP");
 		ArrowMiiBroadcastingIterator.btnSearch(Setup.chromedriver).click();
 		Assert.assertEquals(ArrowMiiBroadcastingIterator.lblType(Setup.chromedriver).getText(), "Type: standard", "Passed");
-		wait.until(ExpectedConditions.visibilityOf(ArrowMiiBroadcastingIterator.tblBroadcastColumns(Setup.chromedriver)));
-		BroadcastIteratorFunctions.compareGroupsToTrigger(TestData.arrGroupsToTriggerExpected4, TestData.arrDiffFromCreatedAtExpected4, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
-	
+		wait.until(ExpectedConditions.visibilityOf(ArrowMiiBroadcastingIterator.tblBroadcastColumns(Setup.chromedriver)));		
+		BroadcastIteratorFunctions.readExcelAndCompare(3, ArrowMiiBroadcastingIterator.xpath1, ArrowMiiBroadcastingIterator.xpath2, ArrowMiiBroadcastingIterator.xpath3);
 	}
+	
+	
+	
 		
 	
 	
-	@AfterTest
+	@AfterTest(alwaysRun = true)
 	public void exit() {
 		Setup.quitArrowMii();
 	}
